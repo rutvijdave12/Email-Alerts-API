@@ -8,7 +8,7 @@ if (!envFilePath){
 }
 require('dotenv').config({path: path.resolve(__dirname, `.${envFilePath}.env`)});
 
-const privateKeyPem = fs.readFileSync(process.env.PRIVATE_KEY_FILE_PATH, 'utf8');
+const privateKeyPem = fs.readFileSync(path.join(__dirname, process.env.PRIVATE_KEY_FILE_PATH), 'utf8');
 const privateKey = forge.pki.privateKeyFromPem(privateKeyPem); 
 
 module.exports = {

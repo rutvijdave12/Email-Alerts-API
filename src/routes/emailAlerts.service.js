@@ -19,7 +19,7 @@ async function emailAlerts(req, res, next){
             infoLogger(req.custom.id, req.body.requestId, resMail.message);
             return res.status(200).json({
                 statusCode: 1,
-                timestamp: Date.now,
+                timestamp: Date.now(),
                 requestId: req.body.requestId,
                 info: {
                     code: errors[resMail.error.code].code,
@@ -33,7 +33,7 @@ async function emailAlerts(req, res, next){
         infoLogger(req.custom.id, req.body.requestId, resMail.message);
         return res.status(200).json({
             statusCode: 0,
-            timestamp: Date.now,
+            timestamp: Date.now(),
             requestId: req.body.requestId,
             info: {
                 code: errors['000'].code,
@@ -46,7 +46,7 @@ async function emailAlerts(req, res, next){
         errorLogger(req.custom.id, req.body.requestId, `Unexpected error | ${err.message}`, err)
         return res.status(500).json({
             statusCode: 1,
-            timestamp: Date.now,
+            timestamp: Date.now(),
             requestId: req.body.requestId,
             info: {
                 code: errors['006'].code,
