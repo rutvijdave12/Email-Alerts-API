@@ -23,5 +23,5 @@ module.exports = {
     emailPort: process.env.EMAIL_PORT || undefined,
     emailUser: process.env.EMAIL_USER || undefined,
     emailPass: process.env.EMAIL_PASS ? privateKey.decrypt(forge.util.decode64(process.env.EMAIL_PASS)) : undefined,
-
+    emailSecure: JSON.parse(process.env.EMAIL_SECURE)
 }
