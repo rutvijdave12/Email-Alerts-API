@@ -1,12 +1,12 @@
 const nodemailer = require('nodemailer');
 const error = require('../../../errors/errors')
-const { emailHost, emailPort, emailService, emailUser, emailPass } = require('../../../config/config')
+const { emailHost, emailPort, emailService, emailUser, emailPass, emailSecure } = require('../../../config/config')
 
 const transporter = nodemailer.createTransport({
     host: emailHost,
     port: emailPort,
     service: emailService,
-    secure: true,
+    secure: emailSecure,
     auth: {
       user: emailUser,
       pass: emailPass
